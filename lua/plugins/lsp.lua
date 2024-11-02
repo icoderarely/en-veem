@@ -220,6 +220,7 @@ return { -- LSP Configuration & Plugins
       ltex = {},
       svelte = {},
       texlab = {},
+      emmet_ls = {},
     }
 
     -- Ensure the servers and tools above are installed
