@@ -7,7 +7,7 @@ return {
     conform.setup {
       formatters_by_ft = {
         lua = { 'stylua' },
-        svelte = { 'prettierd', 'prettier', stop_after_first = true },
+        svelte = { 'prettierd', stop_after_first = true },
         -- astro = { { "prettierd", "prettier", stop_after_first = true } },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },

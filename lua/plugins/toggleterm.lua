@@ -3,7 +3,11 @@ return {
   -- config = true,
   cmd = 'ToggleTerm',
   build = ':ToggleTerm',
-  keys = { { '<C-/>', '<cmd>ToggleTerm<cr>', desc = 'Toggle floating terminal' } },
+  keys = {
+    --   { '<leader>tt', '<cmd>ToggleTerm<cr>', desc = 'Toggle floating terminal' },
+    --   { '<C-_>', '<cmd>ToggleTerm<cr>', desc = 'Toggle floating terminal' },
+    { '<C-t>', '<cmd>ToggleTerm<cr>', desc = 'Toggle floating terminal' },
+  },
   opts = {
     open_mapping = [[<C-/>]],
     direction = 'horizontal',
