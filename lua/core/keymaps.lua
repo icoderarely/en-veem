@@ -40,8 +40,8 @@ else
 end
 -- vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
 -- vim.keymap.set('n', '<leader>x', ':bprevious<bar>bd#<cr>', opts) -- Switch to previous, then delete
-vim.keymap.set('n', '<leader>x', ':bd<cr>', { noremap = true, silent = true, desc = 'Close buffer' })
-vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+vim.keymap.set('n', '<leader>bx', ':bd<cr>', { noremap = true, silent = true, desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>bn', '<cmd> enew <CR>', opts) -- new buffer
 -- Define :Q to use bdelete
 -- vim.cmd('command! Q bdelete')
 -- Remap :q to :Q, so it deletes the buffer instead of quitting
