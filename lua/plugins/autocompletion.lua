@@ -29,7 +29,13 @@ return { -- Autocompletion
   },
   config = function()
     local cmp = require 'cmp'
+
+    -- Load friendly-snippets (this loads snippets from friendly-snippets repo)
     require('luasnip.loaders.from_vscode').lazy_load()
+
+    -- Load custom Lua snippets (from your local ~/.config/nvim/lua/snippets/)
+    require('luasnip.loaders.from_lua').lazy_load { paths = '~/.config/nvim/lua/snippets/' }
+
     local luasnip = require 'luasnip'
     luasnip.config.setup {}
 
@@ -67,7 +73,7 @@ return { -- Autocompletion
           luasnip.lsp_expand(args.body)
         end,
       },
-      completion = { completeopt = 'menu,menuone,noinsert' },
+      completion = { completeopt = 'menu,menuone,noinsert', max_item_count = 5 },
       -- window = {
       --     completion = cmp.config.window.bordered(),
       --     documentation = cmp.config.window.bordered(),
@@ -118,10 +124,10 @@ return { -- Autocompletion
         end, { 'i', 's' }),
       },
       sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
-        { name = 'buffer' },
-        { name = 'path' },
+        { name = 'luasnip', keyword_length = 2, priority = 100 }, -- Highest priority for snippets
+        { name = 'nvim_lsp', keyword_length = 1, priority = 50 },
+        { name = 'buffer', keyword_length = 3, priority = 30 },
+        { name = 'path', priority = 10 },
       },
       formatting = {
         fields = { 'kind', 'abbr', 'menu' },
